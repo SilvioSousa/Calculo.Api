@@ -11,8 +11,16 @@ namespace Calculo.Api.Controllers
     [ApiController]
     public class CalculoController : ControllerBase
     {
+        /// <summary>
+        /// Rota para solicitação de cálculo
+        /// </summary>
+        /// <param name="solicitacaoCalculo"></param>
+        /// <param name="tipoOperacaoEnum"></param>
+        /// <returns></returns>
         [HttpPost]
-        public int Calcular(SolicitacaoCalculo solicitacaoCalculo, TipoOperacaoEnum tipoOperacaoEnum)
+        [ProducesResponseType(typeof(int), 200)]
+        [ProducesResponseType(typeof(int), StatusCodes.Status500InternalServerError)]
+        public int Calcular([FromBody] SolicitacaoCalculo solicitacaoCalculo, TipoOperacaoEnum tipoOperacaoEnum)
         {
             var resultado = CalcularService.Calcular(solicitacaoCalculo, tipoOperacaoEnum);
 

@@ -4,13 +4,13 @@ namespace Calculo.Api.Domain.Enum
 {
     public enum TipoOperacaoEnum
     {
-        [Description("+")]
+        //[Description("+")]
         Soma = 1,
-        [Description("-")]
+        //[Description("-")]
         Subtracao = 2,
-        [Description("/")]
+        //[Description("/")]
         Divisao = 3,
-        [Description("*")]
+        //[Description("*")]
         Multiplicacao = 4
     }
 }
